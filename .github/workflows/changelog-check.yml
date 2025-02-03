@@ -1,0 +1,41 @@
+name: Changelog Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for changelog entry
+        id: changelog-check
+        run: |
+          # Get the files changed in this PR
+          git fetch origin ${{ github.base_ref }}
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+
+          # Check if docs/pages/resources/changelog.md was modified
+          if echo "$CHANGED_FILES" | grep -q "docs/pages/resources/changelog.md"; then
+            echo "Changelog was modified ✅"
+            echo "has_changelog=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changelog entry found ❌"
+            echo "has_changelog=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment on PR
+        if: steps.changelog-check.outputs.has_changelog == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.name,
+              body: '⚠️ This PR is missing a changelog entry. Please add an entry to `docs/pages/resources/changelog.md` describing your changes.'
+            })
