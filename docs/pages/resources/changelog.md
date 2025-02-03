@@ -14,11 +14,12 @@ New versions of Shoelace are released as-needed and generally occur when a criti
 
 ## Next
 
-- Improved performance of `<sl-select>` when using a large number of options [#2318]
-- Updated the Japanese translation [#2329]
 - Adjust `<sl-alert>` to create the toast stack when used only, making it usable in SSR environments. [#2359]
 - Adjust `scrollend-polyfill` so it only runs on the client to make it usable in SSR environments. [#2359]
+- Added the ability to set a custom snap function and use `repeat(n)` to `<sl-split-panel>` [#2340]
 - Fixed a bug with radios in `<sl-dialog>` focus trapping.
+- Improved performance of `<sl-select>` when using a large number of options [#2318]
+- Updated the Japanese translation [#2329]
 
 ## 2.19.1
 
