@@ -27,6 +27,8 @@ jobs:
         if: env.no_changelog == 'true'
         uses: peter-evans/create-or-update-comment@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             ❌ No changelog entry was found. Please add an entry to `docs/pages/resources/changelog.md`.
