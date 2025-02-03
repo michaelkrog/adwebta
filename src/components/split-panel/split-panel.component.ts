@@ -92,13 +92,13 @@ export default class SlSplitPanel extends ShoelaceElement {
   private snapFunction: SnapFunction = SNAP_NONE;
 
   /**
-   * Converts a string containing either a series of fixed/repeated snap points (e.g. "repeat(20%)", "100px 200px 800px", or "10% 50% repeat(10px)") into a SnapFunction. `SnapFunction`s take in a `SnapFunctionOpts` and return the position that the split panel should snap to. 
-   * 
+   * Converts a string containing either a series of fixed/repeated snap points (e.g. "repeat(20%)", "100px 200px 800px", or "10% 50% repeat(10px)") into a SnapFunction. `SnapFunction`s take in a `SnapFunctionOpts` and return the position that the split panel should snap to.
+   *
    * @param snap - The snap string.
    * @returns a `SnapFunction` representing the snap string's logic.
    */
   private toSnapFunction(snap: string): SnapFunction {
-    const snapPoints = snap.split(" ");
+    const snapPoints = snap.split(' ');
 
     return ({ pos, size, snapThreshold, isRtl, vertical }) => {
       let newPos = pos;
@@ -107,14 +107,13 @@ export default class SlSplitPanel extends ShoelaceElement {
       snapPoints.forEach(value => {
         let snapPoint: number;
 
-        if (value.startsWith("repeat(")) {
-          const repeatVal = snap.substring("repeat(".length, snap.length - 1);
-          const isPercent = repeatVal.endsWith("%");
+        if (value.startsWith('repeat(')) {
+          const repeatVal = snap.substring('repeat('.length, snap.length - 1);
+          const isPercent = repeatVal.endsWith('%');
           const repeatNum = Number.parseFloat(repeatVal);
           const snapIntervalPx = isPercent ? size * (repeatNum / 100) : repeatNum;
           snapPoint = Math.round((isRtl && !vertical ? size - pos : pos) / snapIntervalPx) * snapIntervalPx;
-        }
-        else if (value.endsWith("%")) {
+        } else if (value.endsWith('%')) {
           snapPoint = size * (Number.parseFloat(value) / 100);
         } else {
           snapPoint = Number.parseFloat(value);
@@ -133,7 +132,7 @@ export default class SlSplitPanel extends ShoelaceElement {
       });
 
       return newPos;
-    }
+    };
   }
 
   /**
@@ -142,7 +141,7 @@ export default class SlSplitPanel extends ShoelaceElement {
    */
   @property({ reflect: true })
   set snap(snap: string | SnapFunction | null | undefined) {
-    this.snapValue = snap ?? ''
+    this.snapValue = snap ?? '';
     if (snap) {
       this.snapFunction = typeof snap === 'string' ? this.toSnapFunction(snap) : snap;
     } else {
