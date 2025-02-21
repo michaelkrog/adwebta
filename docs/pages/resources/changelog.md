@@ -14,7 +14,7 @@ New versions of Shoelace are released as-needed and generally occur when a criti
 
 ## Next
 
-- Fixed accessibility issues for elements that are closed while having slotted focused children.
+- Fixed accessibility issues for elements that are closed while having slotted focused children. [#2383]
 
 ## 2.20.0
 
