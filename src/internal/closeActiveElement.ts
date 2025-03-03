@@ -6,7 +6,6 @@
  */
 export const blurActiveElement = (elm: HTMLElement) => {
   const { activeElement } = document;
-  console.log(activeElement, elm);
   if (activeElement && elm.contains(activeElement)) {
     (document.activeElement as HTMLElement)?.blur();
   }
