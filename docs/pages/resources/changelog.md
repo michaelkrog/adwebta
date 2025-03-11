@@ -18,6 +18,7 @@ New versions of Shoelace are released as-needed and generally occur when a criti
 - Fixed a bug that in `<sl-dropdown>` that prevented tab from working properly in some cases [#2371]
 - Fixed the guard on popover to allow virtual elements [#2399]
 - Fixed the close button in `<sl-alert>` so clicking above/below it doesn't inadvertently close it [#2375]
+- Fixed accessibility issues for elements that are closed while having slotted focused children. [#2383]
 
 ## 2.20.0
 
