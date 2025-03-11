@@ -12,7 +12,7 @@ Components with the <sl-badge variant="warning" pill>Experimental</sl-badge> bad
 
 New versions of Shoelace are released as-needed and generally occur when a critical mass of changes have accumulated. At any time, you can see what's coming in the next release by visiting [next.shoelace.style](https://next.shoelace.style).
 
-## Next
+## 2.20.1
 
 - Fixed a bug that prevented `<sl-tab-group>` to be activated properly when rendered in another `<sl-tab-group>` [#2367]
 - Fixed a bug that in `<sl-dropdown>` that prevented tab from working properly in some cases [#2371]
