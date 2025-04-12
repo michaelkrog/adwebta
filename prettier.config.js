@@ -1,9 +1,10 @@
-module.exports = {
+/** @type {import("prettier").Config} */
+const config = {
   arrowParens: 'avoid',
   bracketSpacing: true,
   htmlWhitespaceSensitivity: 'css',
   insertPragma: false,
-  jsxBracketSameLine: false,
+  bracketSameLine: false,
   jsxSingleQuote: false,
   printWidth: 120,
   proseWrap: 'preserve',
@@ -15,3 +16,5 @@ module.exports = {
   trailingComma: 'none',
   useTabs: false
 };
+
+export default config;
