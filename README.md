@@ -2,7 +2,7 @@
 
 **This is only the beginning**
 
-This library is only just taking off. Currently it is just a clone of Shoelace, but the idea is that it will change into components based on (Adwaita)[https://gnome.pages.gitlab.gnome.org/libadwaita/] design, making it possible create Gnome like experiences on the Web and ultimately build both native and web applications from the same code base based on the (Swift programming language)[https://www.swift.org].
+This library is only just taking off. Currently it is just a clone of Shoelace, but the idea is that it will change into components based on [Adwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/) design, making it possible create Gnome like experiences on the Web and ultimately build both native and web applications from the same code base based on the [Swift programming language](https://www.swift.org).
 
 These are the steps to get there....
 
@@ -10,10 +10,10 @@ These are the steps to get there....
 The current repository (Adwebta) will be changed into containing Adwaita specific web components. This will allow for having web based building blocks that looks and feels like the components delivered via libadwaita. These components will be usable via HTML and therefore also usable by Javascript frameworks as Angular and Vue.
 
 ## 2: Create Swift library for Adwebta
-Further down the line a Swift-library will be created for Adwebta, with an interface similar to (Adwaita-swift)[https://git.aparoksha.dev/aparoksha/adwaita-swift]. This will allow for writing declaritive UI applications in Swift, compile it to Wasm and run it in the browser. Without the need of a single line of Typescript/Javascript code.
+Further down the line a Swift-library will be created for Adwebta, with an interface similar to [Adwaita-swift](https://git.aparoksha.dev/aparoksha/adwaita-swift). This will allow for writing declaritive UI applications in Swift, compile it to Wasm and run it in the browser. Without the need of a single line of Typescript/Javascript code.
 
 ## 3: Backend for Aparoksha
-Even further down the line a new backend will be created for (Aparoksha)[https://www.aparoksha.dev]. When this is in place (and Aparoksha also has matured) it will allow for building applications in Swift with a single UI code base for both Native and Web applications **using the native UI framework on each platform**.
+Even further down the line a new backend will be created for [Aparoksha](https://www.aparoksha.dev). When this is in place (and Aparoksha also has matured) it will allow for building applications in Swift with a single UI code base for both Native and Web applications **using the native UI framework on each platform**.
 
 ## Using native UI frameworks makes a difference
 Many have tried to create UI framework that works across platforms. Flutter is a popular choice for mobile devices and now even also for Web. Gtk is also a UI toolkit that can be used across platforms. But most cross platform UI toolkits fails in one important factor: _They do not use native UI frameworks._
