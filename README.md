@@ -13,7 +13,7 @@ The current repository (Adwebta) will be changed into containing Adwaita specifi
 Further down the line a Swift-library will be created for Adwebta, with an interface similar to [Adwaita-swift](https://git.aparoksha.dev/aparoksha/adwaita-swift). This will allow for writing declaritive UI applications in Swift, compile it to Wasm and run it in the browser. Without the need of a single line of Typescript/Javascript code.
 
 ## 3: Backend for Aparoksha
-Even further down the line a new backend will be created for [Aparoksha](https://www.aparoksha.dev). When this is in place (and Aparoksha also has matured) it will allow for building applications in Swift with a single UI code base for both Native and Web applications **using the native UI framework on each platform**.
+Even further down the line adwebta-swift will (hopefully) become an official backend of [Aparoksha](https://www.aparoksha.dev). When this is in place (and Aparoksha also has matured) it will allow for building applications in Swift with a single UI code base for both Native and Web applications **using the native UI framework on each platform**.
 
 ## Using native UI frameworks makes a difference
 Many have tried to create UI framework that works across platforms. Flutter is a popular choice for mobile devices and now even also for Web. Gtk is also a UI toolkit that can be used across platforms. But most cross platform UI toolkits fails in one important factor: _They do not use native UI frameworks._
