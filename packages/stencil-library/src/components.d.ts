@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface GtkLabel {
         /**
           * The first name
          */
@@ -22,18 +22,18 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLGtkLabelElement extends Components.GtkLabel, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLGtkLabelElement: {
+        prototype: HTMLGtkLabelElement;
+        new (): HTMLGtkLabelElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "gtk-label": HTMLGtkLabelElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface GtkLabel {
         /**
           * The first name
          */
@@ -48,14 +48,14 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "gtk-label": GtkLabel;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "gtk-label": LocalJSX.GtkLabel & JSXBase.HTMLAttributes<HTMLGtkLabelElement>;
         }
     }
 }

@@ -6,21 +6,21 @@ import { ProxyCmp } from './angular-component-lib/utils';
 
 import type { Components } from 'stencil-library/components';
 
-import { defineCustomElement as defineMyComponent } from 'stencil-library/components/my-component.js';
+import { defineCustomElement as defineGtkLabel } from 'stencil-library/components/gtk-label.js';
 @ProxyCmp({
-  defineCustomElementFn: defineMyComponent,
+  defineCustomElementFn: defineGtkLabel,
   inputs: ['first', 'last', 'middle']
 })
 @Component({
-  selector: 'my-component',
+  selector: 'gtk-label',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['first', 'last', 'middle'],
   standalone: true
 })
-export class MyComponent {
-  protected el: HTMLMyComponentElement;
+export class GtkLabel {
+  protected el: HTMLGtkLabelElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -28,6 +28,6 @@ export class MyComponent {
 }
 
 
-export declare interface MyComponent extends Components.MyComponent {}
+export declare interface GtkLabel extends Components.GtkLabel {}
 
 
